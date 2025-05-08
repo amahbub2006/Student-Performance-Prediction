@@ -1,0 +1,16 @@
+columns:
+  current_grade: int
+  desired_grade: int
+  studytime: int
+  failures: int
+  absences: int
+  success: int
+
+numerical_columns:
+  - current_grade
+  - desired_grade
+  - studytime
+  - failures
+  - absences
+
+target_column: success
