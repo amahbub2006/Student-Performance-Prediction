@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Success Predictor</title>
+    <title>Prediction Result | Student Success Predictor</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script>
         function updateValue(id, targetId) {
@@ -11,8 +11,17 @@
 </head>
 <body class="bg-light">
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Will You Succeed?</h2>
+
+        <div class="card p-4 shadow mb-4">
+            <h2 class="text-center mb-3">🎯 Prediction Result</h2>
+
+            <div class="alert alert-info fs-5 text-center">{{ result }}</div>
+            <div class="alert alert-warning fs-6 text-center">{{ realism }}</div>
+            <div class="text-center text-muted">{{ comparison }}</div>
+        </div>
+
         <form method="POST" action="/" class="card p-4 shadow">
+            <h5 class="text-center mb-3">🔁 Try Again</h5>
 
             <div class="mb-3">
                 <label class="form-label">Current Grade (%): <strong><span id="curVal">75</span></strong></label>
@@ -39,8 +48,9 @@
                 <input type="range" class="form-range" min="0" max="50" value="3" name="absences" id="absences" oninput="updateValue('absences', 'absVal')">
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Predict</button>
+            <button type="submit" class="btn btn-primary w-100">Try Again</button>
         </form>
+
     </div>
 </body>
 </html>
