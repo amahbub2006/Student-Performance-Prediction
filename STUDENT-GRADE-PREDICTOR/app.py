@@ -34,17 +34,17 @@ def index():
         # Predict with threshold
         prob = model.predict_proba(data)[0][1]
         prediction = 1 if prob >= 0.35 else 0
-        result = "LIKELY to succeed ✅" if prediction == 1 else "UNLIKELY to succeed ❌"
+        result = "Success Likely ✅" if prediction == 1 else "Success UNLIKELY ❌"
 
         # Realism message
         if jump <= 2:
             realism = "✅ Your goal is realistic and achievable."
         elif jump <= 8:
-            realism = "⚠️ Ambitious goal. It might be difficult, but not impossible."
+            realism = "⚠️ Ambitious goal. Difficult, but not impossible."
         elif jump <= 15:
-            realism = "❌ That's a big stretch. Most students can't jump that far."
+            realism = "❌ That's a big stretch. Most don't achieve this."
         else:
-            realism = "🚫 That goal is extremely unrealistic based on past students."
+            realism = "🚫 That goal is too unrealistic based on past students."
 
         # Comparison stats
         df = pd.read_csv("artifacts/data_transformation/transformed.csv")
@@ -53,11 +53,12 @@ def index():
             total = len(filtered)
             success_count = filtered["success"].sum()
             rate = round((success_count / total) * 100, 1)
-            comparison = f"🔎 Out of {total} past students who aimed for grade {desired}, {rate}% succeeded."
+            comparison = f"🔎 {total} students who aimed for {desired}, {rate}% succeeded."
         else:
-            comparison = "No past student aimed for this grade. You're blazing a new trail 🧭"
+            comparison = "Nobody else tried to get this grade. 🧭"
 
-        return render_template("results.html", result=result, realism=realism, comparison=comparison)
+        return render_template("results.html", 
+                               result=result, realism=realism, comparison=comparison)
 
     return render_template("index.html")
 

@@ -1,8 +1,13 @@
-from src.studentml.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
-from src.studentml.pipeline.stage_04_model_trainer import ModelTrainerTrainingPipeline
-from src.studentml.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
-from src.studentml.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
-from src.studentml.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+from src.studentml.pipeline.stage_05_model_evaluation import (
+    ModelEvaluationTrainingPipeline)
+from src.studentml.pipeline.stage_04_model_trainer import (
+    ModelTrainerTrainingPipeline)
+from src.studentml.pipeline.stage_03_data_transformation import (
+    DataTransformationTrainingPipeline)
+from src.studentml.pipeline.stage_02_data_validation import (
+    DataValidationTrainingPipeline)
+from src.studentml.pipeline.stage_01_data_ingestion import (
+    DataIngestionTrainingPipeline)
 from src.studentml.logging.logger import logger
 import sys
 sys.path.append("src")
