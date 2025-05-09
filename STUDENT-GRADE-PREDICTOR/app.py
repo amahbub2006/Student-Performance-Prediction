@@ -9,7 +9,7 @@ model = joblib.load("artifacts/model_trainer/model.pkl")
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        
+       # Get form data 
         current_raw = int(request.form["current_grade"])
         desired_raw = int(request.form["desired_grade"])
         studytime_raw = int(request.form["studytime"])
