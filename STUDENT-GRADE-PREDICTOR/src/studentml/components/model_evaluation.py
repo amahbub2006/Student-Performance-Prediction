@@ -6,6 +6,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from studentml.logging.logger import logger
 from studentml.entity.config_entity import ModelEvaluationConfig
 
+
 class ModelEvaluation:
     def __init__(self, config: ModelEvaluationConfig):
         self.config = config

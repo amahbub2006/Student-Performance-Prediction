@@ -2,6 +2,7 @@ from studentml.config.configuration import ConfigurationManager
 from studentml.components.model_trainer import ModelTrainer
 from studentml.logging.logger import logger
 
+
 class ModelTrainerTrainingPipeline:
     def __init__(self):
         self.config = ConfigurationManager()

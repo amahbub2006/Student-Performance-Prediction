@@ -3,6 +3,7 @@ import pandas as pd
 from studentml.logging.logger import logger
 from studentml.entity.config_entity import DataValidationConfig
 
+
 class DataValidation:
     def __init__(self, config: DataValidationConfig):
         self.config = config

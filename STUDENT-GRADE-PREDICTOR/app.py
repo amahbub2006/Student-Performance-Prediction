@@ -5,6 +5,7 @@ import joblib
 app = Flask(__name__)
 model = joblib.load("artifacts/model_trainer/model.pkl")
 
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
@@ -60,5 +61,6 @@ def index():
 
     return render_template("index.html")
 
+
 if __name__ == "__main__":
-    app.run(debug=True)# trigger
+    app.run(debug=True)  # trigger

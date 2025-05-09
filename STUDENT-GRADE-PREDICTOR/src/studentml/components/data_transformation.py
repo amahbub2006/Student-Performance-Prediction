@@ -3,6 +3,7 @@ import os
 from studentml.logging.logger import logger
 from studentml.entity.config_entity import DataTransformationConfig
 
+
 class DataTransformation:
     def __init__(self, config: DataTransformationConfig):
         self.config = config
@@ -40,7 +41,8 @@ class DataTransformation:
                 })
 
         transformed_df = pd.DataFrame(rows)
-        os.makedirs(os.path.dirname(self.config.transformed_data_path), exist_ok=True)
+        os.makedirs(os.path.dirname(
+            self.config.transformed_data_path), exist_ok=True)
         transformed_df.to_csv(self.config.transformed_data_path, index=False)
         logger.info("✅ Data transformation completed and saved.")
         return transformed_df

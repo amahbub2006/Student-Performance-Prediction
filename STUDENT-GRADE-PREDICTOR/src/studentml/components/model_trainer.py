@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from studentml.logging.logger import logger
 from studentml.entity.config_entity import ModelTrainerConfig
 
+
 class ModelTrainer:
     def __init__(self, config: ModelTrainerConfig):
         self.config = config
@@ -22,7 +23,8 @@ class ModelTrainer:
             X, y, test_size=0.2, random_state=42, stratify=y
         )
 
-        logger.info("Training RandomForest model with class_weight='balanced'...")
+        logger.info(
+            "Training RandomForest model with class_weight='balanced'...")
         model = RandomForestClassifier(
             n_estimators=100,
             max_depth=5,

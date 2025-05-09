@@ -5,6 +5,7 @@ from studentml.entity.config_entity import (
     DataValidationConfig, ModelTrainerConfig, ModelEvaluationConfig
 )
 
+
 class ConfigurationManager:
     def __init__(self,
                  config_path="config/config.yaml",
