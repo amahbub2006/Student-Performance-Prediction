@@ -34,7 +34,11 @@ def index():
         # Predict with threshold
         prob = model.predict_proba(data)[0][1]
         prediction = 1 if prob >= 0.35 else 0
-        result = "Success Likely ✅" if prediction == 1 else "Success UNLIKELY ❌"
+        result = (
+    "Success Likely ✅" if prediction == 1
+    else "Success UNLIKELY ❌"
+)
+
 
         # Realism message
         if jump <= 2:
