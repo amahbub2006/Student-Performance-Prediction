@@ -53,12 +53,19 @@ def index():
             total = len(filtered)
             success_count = filtered["success"].sum()
             rate = round((success_count / total) * 100, 1)
-            comparison = f"🔎 {total} students who aimed for {desired}, {rate}% succeeded."
+            comparison = (
+                f"🔎 {total} students who aimed for {desired}, "
+                f"{rate}% succeeded."
+            )
         else:
             comparison = "Nobody else tried to get this grade. 🧭"
 
-        return render_template("results.html", 
-                               result=result, realism=realism, comparison=comparison)
+        return render_template(
+            "results.html",
+            result=result,
+            realism=realism,
+            comparison=comparison
+        )
 
     return render_template("index.html")
 
